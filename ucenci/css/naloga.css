@@ -1,0 +1,18 @@
+main h1{
+  margin-bottom: 30px;
+}
+p{
+  color: <?php echo $color6; ?>
+}
+input{
+  color: <?php echo $color6; ?>;
+}
+.submit{
+    background-color:  <?php echo $color4; ?>;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    width: 70px;
+    height: 30px;
+    cursor: pointer;
+}

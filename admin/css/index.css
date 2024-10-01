@@ -1,0 +1,14 @@
+.box-100{
+  min-width: 100%;
+}
+td{
+  max-width: 40px;
+  overflow: scroll;
+}
+table input{
+  max-width: 60px;
+}
+.container div{
+  min-height: 200px;
+  /*border: 1px solid <?php echo $color4 ?>;*/
+}

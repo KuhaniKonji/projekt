@@ -1,0 +1,34 @@
+table{
+  border-radius: 10px;
+}
+.table{
+  color: #ccdeff;
+  border-collapse: collapse;
+  font-size: 11px;
+  min-width: 400px;
+  margin-bottom: 30px;
+  border: 1px solid #7E7F83;
+  border-radius: 5px;
+}
+.table thead tr{
+  font-size: 15px;
+  background-color: #7E7F83;
+  color: #ccdeff;
+  font-weight: normal;
+}
+.table th, td{
+  padding: 10px;
+}
+.table tbody tr{
+  border-bottom: 1px solid #7E7F83;
+}
+.table tbody tr:nth-last-of-type(even)
+{
+  background-color: #242322;
+}.table tbody tr:nth-last-of-type(odd)
+{
+  background-color: #34312D;
+}
+table a{
+  color: #7E7F83;
+}
