@@ -1,6 +1,14 @@
 <?php
+ob_start();
 include("php/linki.php");
 include("php/session.php");
+if (isset($_POST['izbris_ucenca'])) {
+  $id_ucenca=$_POST['id_ucenca'];
+  $sql = "delete from ucenci where id_ucenca='$id_ucenca'";
+  mysqli_query($con, $sql);
+  header("location:ucenci.php");
+}
+
  ?>
  <!DOCTYPE html>
  <html lang="en" dir="ltr">

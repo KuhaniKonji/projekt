@@ -22,6 +22,6 @@ if($count == 1){
                  $result2 = mysqli_query($con, $sql2);
                  header("location:../prijava.php?napaka3=1");
                }
-//header("location:../index.php");
+
 
  ?>

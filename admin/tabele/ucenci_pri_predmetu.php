@@ -1,30 +1,41 @@
-<?php
-$sql_ucenci_pri_predmetu="select * from  ucenci";
-$res_ucenci_pri_predmetu=mysqli_query($con, $sql_ucenci_pri_predmetu);
+<div class="box-100">
+  <h2>Predmeti</h2>
+  <table  class="table" align="center">
+      <thead>
+        <tr>
+          <th>Ime Učitelja</th>
+          <th>Priimek Učitelja</th>
+          <th>Email</th>
+          <th>Geslo</th>
+          <th>Datum Registracije</th>
+          <th>Izbriši/Dodaj</th>
+        </tr>
 
- ?>
+      </thead>
 
-<table class="table" align="center">
-  <thead>
-    <tr>
-      <th>Ime ucenca</th>
-      <th>Email</th>
-      <th>Datum Registracije</th>
-      
-    </tr>
-  </thead>
-  <tbody>
-    <?php while ($row_ucenci_pri_predmetu=mysqli_fetch_array($res_ucenci_pri_predmetu)) {
-      
+      <tbody>
+  <?php
+  $resucenci=mysqli_query($con, "SELECT * FROM ucenci");
+  while($rowucenci=mysqli_fetch_array($resucenci)){
     ?>
-    <tr>
-      <td><?php echo $row_ucenci_pri_predmetu['ime'] . " " . $row_ucenci_pri_predmetu['priimek']; ?></td>
-      <td> <?php
-       echo $row_ucenci_pri_predmetu['email']; ?></td>
-      <td> <?php
-     echo $row_ucenci_pri_predmetu['datum_registracije'];
-       ?></td>
-    </tr>
-  <?php } ?>
+      <tr>
+        <td><?php echo $rowucenci['ime'] ;
+        $id_ucenca=$rowucenci['id_ucenca']; ?></td>
+        <td><?php echo $rowucenci['priimek']; ?></td>
+        <td><?php echo$rowucenci['email']; ?></td>
+        <td><?php echo $rowucenci['geslo']; ?></td>
+        <td><?php echo $rowucenci['datum_registracije']; ?></td>
+        <td><form action="#" method="post">
+        <input type="hidden" name="id_ucenca" value="<?php echo $rowucenci['id_ucenca']; ?>">
+        <input type="submit" name="izbris_ucenca" value="Izbriši">
+      </form></td>
+      </tr>
+    <?php
+  } ?>
+  
+ 
   </tbody>
-</table>
+  </table>
+
+
+</div>

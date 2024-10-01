@@ -30,12 +30,12 @@ include("php/linki.php");
            <input type="password" name="geslo" placeholder="Geslo" required><br>
            <input class="submit" type="submit" value="Prijava"><br>
            <?php if (isset($_GET['napaka'])) {
-             // code...
+            
             ?>
            <p>Napačno geslo ali email!</p>
          <?php } ?>
          <?php if (isset($_GET['napaka3'])) {
-           // code...
+          
           ?>
          <p>Prijavi se</p>
        <?php } ?>
@@ -53,7 +53,7 @@ include("php/linki.php");
            <input type="password" name="geslo" placeholder="Geslo" required><br>
            <input class="submit" type="submit" value="Registracija"><br>
            <?php if (isset($_GET['napaka2'])) {
-             // code...
+             
             ?>
            <p>Email že obstaja</p>
          <?php } ?>
