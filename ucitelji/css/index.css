@@ -1,0 +1,11 @@
+.container{
+  display: grid;
+  grid-template-areas: "naloge predmeti"
+                        "ocene ucitelji";
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+}
+.container div{
+  min-height: 200px;
+  /*border: 1px solid <?php echo $color4 ?>;*/
+}
