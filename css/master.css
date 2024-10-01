@@ -1,0 +1,81 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin:0;
+  min-height: 100vh;
+  width: auto;
+  background: #34312D;
+  color: #7E7F83;
+}
+header{
+  height: 80px;
+  width: auto;
+  background-color: #7E7F83;
+  border-bottom: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 100px;
+}
+main{
+  padding: 30px 0;
+  min-height: auto;
+  width: 100%;
+  min-height: 75vh;
+}
+footer{
+  border-top: 1px solid white;
+  height: auto;
+  width: auto;
+  background-color: #7E7F83;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+a{
+  text-decoration: none;
+}
+.nav{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav a{
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  padding-bottom: 10px;
+}
+.nav a:hover{
+  color: white;
+  border-bottom: 1px solid white;
+  transition: 0.3s;
+}
+ .logo a{
+  font-weight: bold;
+  font-size: 35px;
+  color: <?php echo $color3 ?>;
+}
+.logo a:hover{
+ transition: 0.3s;
+ color: <?php echo $color5 ?>;
+}
+.odjava a{
+ font-weight: bold;
+ font-size: 20px;
+ color: <?php echo $color4 ?>;
+ padding: 10px;
+ border-radius: 15px;
+}
+.odjava a:hover{
+ transition: 0.3s;
+ color: <?php echo $color6 ?>;
+}
+footer div{
+  margin:10px 0;
+  color: white;
+}

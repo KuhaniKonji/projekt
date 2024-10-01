@@ -1,0 +1,38 @@
+main h1{
+  margin-bottom: 40px;
+}
+.box{
+  height: auto;
+  width: 30%;
+  background-color: <?php echo $color2 ?>;
+  margin: auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+input{
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: <?php echo $color1 ?>;
+  color: <?php echo $color6 ?>;
+}
+.submit{
+  cursor: pointer;
+  width: 200px;
+  background-color: <?php echo $color1 ?>;
+  color: <?php echo $color6 ?>;
+  transition: 0.3s;
+}
+.submit:hover{
+  background-color: <?php echo $color6 ?>;
+  color: <?php echo $color1 ?>;
+}
+.box p{
+  color: orange;
+}
