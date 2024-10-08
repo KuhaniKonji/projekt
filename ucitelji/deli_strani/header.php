@@ -1,4 +1,4 @@
-<span class="logo"><a href="index.php">Logo</a> </span>
+<span class="logo"><a href="index.php"><img src="../Slike/OIP.jpg" alt=""></a></span>
 <div class="nav">
   <span> <a href="predmeti.php">Predmeti</a> </span>
   <span> <a href="naloge.php">Naloge</a> </span>
