@@ -41,6 +41,7 @@ include("php/linki.php");
        <?php } ?>
          </form>
        </div>
+      <a href="../ucenci/prijava.php">Prijava kot učenec</a>
      </main>
    </body>
  </html>
