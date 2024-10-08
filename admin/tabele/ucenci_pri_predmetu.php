@@ -1,5 +1,5 @@
 <div class="box-100">
-  <h2>Predmeti</h2>
+  <h2>Ucenci</h2>
   <table  class="table" align="center">
       <thead>
         <tr>
