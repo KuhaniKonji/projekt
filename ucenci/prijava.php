@@ -59,6 +59,7 @@ include("php/linki.php");
          <?php } ?>
          </form>
        </div>
+      <a href="../ucitelji/prijava.php">Prijava kot učitelj</a>
      </main>
    </body>
  </html>
