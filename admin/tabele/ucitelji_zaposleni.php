@@ -1,5 +1,5 @@
 <div class="box-100">
-  <h2>Predmeti</h2>
+  <h2>Učitelji</h2>
   <table  class="table" align="center">
       <thead>
         <tr>
@@ -36,7 +36,7 @@
         <?php
 
         $id_ucitelja=$id_ucitelja+1;
-        echo $id_ucitelja; ?>
+        ?>
         <input type="hidden" value="<?php echo $id_ucitelja; ?>" name="id_ucitelja">
         <td> <input type="text" name="ime_ucitelja"> </td>
         <td> <input type="text" name="priimek_ucitelja"> </td>
