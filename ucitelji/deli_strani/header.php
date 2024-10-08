@@ -4,4 +4,4 @@
   <span> <a href="naloge.php">Naloge</a> </span>
   <span> <a href="ucenci.php">Učenci</a> </span>
 </div>
-<span class="odjava"><a href="php/odjava.php">Odjava</a> </span>
+<span class="profil"><span class="odjava"><a href="php/odjava.php"><img src="../Slike/logout-box-fill.svg" alt=""></a> </span></span>
