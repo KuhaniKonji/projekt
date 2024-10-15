@@ -32,10 +32,49 @@
       </tr>
     <?php
   } ?>
-  
- 
+
+<tr>
+    <form action="#" method="post" onsubmit="preveri(event)">
+        <?php
+
+        $id_ucenca=$id_ucenca+1;
+        ?>
+        <input type="hidden" value="<?php echo $id_ucenca; ?>" name="id_ucenca">
+        <td><input type="text" name="ime_ucenca"> </td>
+        <td><input type="text" name="priimek_ucenca"> </td>
+        <td><input type="email" name="email"> </td>
+        <td><input type="text" name="geslo"></td>
+        <td><input type="date" name="datum_registracije"></td>
+        <td><input type="submit" name="dodaj_ucenca" value="Dodaj" id="1"> </td>
+        </form>
+      </tr>
   </tbody>
   </table>
 
 
 </div>
+ 
+  </tbody>
+  </table>
+</div>
+
+<script>
+  function preveri(event) {
+  
+    var ime = document.getElementsByName('ime_ucenca')[0].value;
+    var priimek = document.getElementsByName('priimek_ucenca')[0].value;
+    var email = document.getElementsByName('email')[0].value;
+    var geslo = document.getElementsByName('geslo')[0].value;
+    var datum = document.getElementsByName('datum_registracije')[0].value;
+
+    if (ime === "" || priimek === "" || email === "" || geslo === "" || datum === "") {
+      alert("Vsa polja morajo biti izpolnjena!");
+      event.preventDefault(); 
+    }
+  }
+</script>
+
+
+
+
+
