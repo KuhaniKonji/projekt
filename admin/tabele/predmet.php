@@ -41,13 +41,13 @@
         $id_predmeta=$id_predmeta+1;
         echo $id_predmeta; ?>
         <input type="hidden" value="<?php echo $id_predmeta; ?>" name="id_predmeta"></td>
-        <td> <input type="text" name="ime_predmeta"> </td>
-        <td> <input type="number"min="1" max="4" name="letnik"> </td>
+        <td> <input type="text" name="ime_predmeta" required> </td>
+        <td> <input type="number"min="1" max="4" name="letnik" required> </td>
         <td> <select name="id_ucitelja"><?php $res=mysqli_query($con, "select * from ucitelji");
         while ($row=mysqli_fetch_array($res)) {
           echo "<option value='". $row['id_ucitelja'] ."'>" . $row['ime_ucitelja'] . " " . $row['priimek_ucitelja'] . "</option>";
         }  ?></select></td>
-        <td><input type="text" name="okrajsava"></td>
+        <td><input type="text" name="okrajsava" required></td>
         <td><input type="submit" name="razpis_predmeta" value="Dodaj"> </td>
         </form>
       </tr>
