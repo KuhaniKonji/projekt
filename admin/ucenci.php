@@ -8,7 +8,16 @@ if (isset($_POST['izbris_ucenca'])) {
   mysqli_query($con, $sql);
   header("location:ucenci.php");
 }
-
+if (isset($_POST['dodaj_ucenca'])) {
+  $ime=$_POST['ime_ucenca'];
+  $priimek=$_POST['priimek_ucenca'];
+  $email=$_POST['email'];
+  $geslo=$_POST['geslo'];
+  $sql = "insert into ucenci (id_ucenca, ime, priimek, email, geslo) values ('$id_ucenca', '$ime', '$priimek', '$email' , '$geslo')";
+  mysqli_query($con, $sql);
+  header("location:ucenci.php");
+}
+  
  ?>
  <!DOCTYPE html>
  <html lang="en" dir="ltr">
