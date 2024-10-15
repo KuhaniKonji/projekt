@@ -32,7 +32,7 @@
   } ?>
   
   <tr>
-    <form action="#" method="post">
+    <form action="#" method="post" onsubmit="preveri(event)">
         <?php
 
         $id_ucitelja=$id_ucitelja+1;
@@ -47,6 +47,27 @@
       </tr>
   </tbody>
   </table>
-
-
 </div>
+
+
+<script>
+  function preveri(event) {
+  
+    var ime = document.getElementsByName('ime_ucitelja')[0].value;
+    var priimek = document.getElementsByName('priimek_ucitelja')[0].value;
+    var email = document.getElementsByName('email')[0].value;
+    var geslo = document.getElementsByName('geslo')[0].value;
+
+    if (ime === "" || priimek === "" || email === "" || geslo === "") {
+      alert("Vsa polja morajo biti izpolnjena!");
+      event.preventDefault(); 
+    }
+  }
+</script>
+
+
+
+
+
+
+
