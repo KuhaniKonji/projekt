@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Gostitelj: 127.0.0.1:3307
--- Čas nastanka: 05. okt 2021 ob 11.24
--- Različica strežnika: 10.4.21-MariaDB
--- Različica PHP: 8.0.10
+-- Host: 127.0.0.1
+-- Generation Time: Oct 22, 2024 at 08:11 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,32 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Zbirka podatkov: `redovalnica`
+-- Database: `redovalnica`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `naloge`
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_admin` int(11) NOT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `geslo` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `username`, `geslo`) VALUES
+(1, 'admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `naloge`
 --
 
 CREATE TABLE `naloge` (
@@ -34,23 +53,22 @@ CREATE TABLE `naloge` (
   `navodilo` text NOT NULL,
   `datum_razpisa` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `rok_za_oddajo` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_general_ci;
 
 --
--- Odloži podatke za tabelo `naloge`
+-- Dumping data for table `naloge`
 --
 
 INSERT INTO `naloge` (`id_naloge`, `id_predmeta`, `ime_naloge`, `navodilo`, `datum_razpisa`, `rok_za_oddajo`) VALUES
-(1, 1, 'Naloga za slovenscino', 'blabla', '2021-09-28 13:53:09', '2021-09-30'),
 (2, 1, 'Druga naloga za SLO', 'Naloga', '2021-09-28 06:54:34', '2021-09-29'),
 (3, 3, 'Prva naloga', 'asdf', '2021-10-05 08:23:06', '2021-10-29'),
-(4, 1, 'abcd', 'navodiiiiiloooooo', '2021-10-05 08:24:18', '2021-10-29'),
-(5, 3, 'slo3', 'aaa', '2021-10-05 08:45:54', '2021-10-27');
+(5, 3, 'slo3', 'aaa', '2021-10-05 08:45:54', '2021-10-27'),
+(6, 1, 'asdasd', 'asdasd', '2024-09-17 06:53:47', '2024-09-18');
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `ocenjene_naloge`
+-- Table structure for table `ocenjene_naloge`
 --
 
 CREATE TABLE `ocenjene_naloge` (
@@ -58,20 +76,20 @@ CREATE TABLE `ocenjene_naloge` (
   `id_oddane_naloge` int(11) NOT NULL,
   `ocena` int(1) NOT NULL,
   `datum` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_general_ci;
 
 --
--- Odloži podatke za tabelo `ocenjene_naloge`
+-- Dumping data for table `ocenjene_naloge`
 --
 
 INSERT INTO `ocenjene_naloge` (`id_ocenjene_naloge`, `id_oddane_naloge`, `ocena`, `datum`) VALUES
-(4, 10, 4, '2021-10-05 08:28:04'),
-(5, 8, 4, '2021-10-05 08:43:19');
+(6, 8, 3, '2024-09-17 06:44:39'),
+(7, 9, 3, '2024-09-17 06:45:10');
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `oddane_naloge`
+-- Table structure for table `oddane_naloge`
 --
 
 CREATE TABLE `oddane_naloge` (
@@ -81,21 +99,23 @@ CREATE TABLE `oddane_naloge` (
   `naloga` varchar(100) NOT NULL,
   `datum_oddaje` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `pregledano` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_general_ci;
 
 --
--- Odloži podatke za tabelo `oddane_naloge`
+-- Dumping data for table `oddane_naloge`
 --
 
 INSERT INTO `oddane_naloge` (`id_oddane_naloge`, `id_ucenca`, `id_naloge`, `naloga`, `datum_oddaje`, `pregledano`) VALUES
 (8, 1, 1, 'Naloge/license.txt', '2021-10-05 08:43:19', 1),
 (9, 8, 2, 'Naloge/legal.htm', '2021-10-05 07:19:57', 0),
-(10, 1, 4, 'Naloge/az.pak', '2021-10-05 08:28:04', 1);
+(10, 1, 4, 'Naloge/az.pak', '2021-10-05 08:28:04', 1),
+(11, 10, 1, '../Naloge/wifi.txt', '2024-09-10 06:51:12', 0),
+(12, 1, 3, '../Naloge/AŽProjektnaNPP.sql', '2024-10-01 06:39:42', 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `predmeti`
+-- Table structure for table `predmeti`
 --
 
 CREATE TABLE `predmeti` (
@@ -103,10 +123,10 @@ CREATE TABLE `predmeti` (
   `ime_predmeta` varchar(30) NOT NULL,
   `okrajsava` varchar(5) NOT NULL,
   `letnik` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_general_ci;
 
 --
--- Odloži podatke za tabelo `predmeti`
+-- Dumping data for table `predmeti`
 --
 
 INSERT INTO `predmeti` (`id_predmeta`, `ime_predmeta`, `okrajsava`, `letnik`) VALUES
@@ -117,7 +137,7 @@ INSERT INTO `predmeti` (`id_predmeta`, `ime_predmeta`, `okrajsava`, `letnik`) VA
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `ucenci`
+-- Table structure for table `ucenci`
 --
 
 CREATE TABLE `ucenci` (
@@ -127,32 +147,33 @@ CREATE TABLE `ucenci` (
   `email` varchar(50) NOT NULL,
   `geslo` varchar(50) NOT NULL,
   `datum_registracije` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_general_ci;
 
 --
--- Odloži podatke za tabelo `ucenci`
+-- Dumping data for table `ucenci`
 --
 
 INSERT INTO `ucenci` (`id_ucenca`, `ime`, `priimek`, `email`, `geslo`, `datum_registracije`) VALUES
 (1, 'Teo', 'Bizjak', 'bizjak.teo@gmail.com', 'pass', '2021-09-28 06:20:34'),
 (7, 'Aa', 'A', 'johnsmith@gmail.com', 'koko', '2021-09-28 18:57:16'),
 (8, 'B', 'B', 'teobizjak1@hotmail.com', 'bbb', '2021-09-28 18:58:17'),
-(9, 'Aa', 'Bb', 's@gmail.com', 'pass', '2021-10-05 05:32:38');
+(9, 'Aa', 'Bb', 's@gmail.com', 'pass', '2021-10-05 05:32:38'),
+(11, 'anze', 'znidar', 'anzeznidar@dijak', '123', '2024-10-22 06:10:59');
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `ucenec_predmet`
+-- Table structure for table `ucenec_predmet`
 --
 
 CREATE TABLE `ucenec_predmet` (
   `id_ucenec_predmet` int(11) NOT NULL,
   `id_ucenca` int(11) NOT NULL,
   `id_predmeta` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_general_ci;
 
 --
--- Odloži podatke za tabelo `ucenec_predmet`
+-- Dumping data for table `ucenec_predmet`
 --
 
 INSERT INTO `ucenec_predmet` (`id_ucenec_predmet`, `id_ucenca`, `id_predmeta`) VALUES
@@ -162,12 +183,12 @@ INSERT INTO `ucenec_predmet` (`id_ucenec_predmet`, `id_ucenca`, `id_predmeta`) V
 (20, 8, 3),
 (21, 8, 2),
 (22, 1, 2),
-(23, 1, 3);
+(26, 1, 3);
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `ucitelji`
+-- Table structure for table `ucitelji`
 --
 
 CREATE TABLE `ucitelji` (
@@ -176,10 +197,10 @@ CREATE TABLE `ucitelji` (
   `priimek_ucitelja` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `geslo` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_general_ci;
 
 --
--- Odloži podatke za tabelo `ucitelji`
+-- Dumping data for table `ucitelji`
 --
 
 INSERT INTO `ucitelji` (`id_ucitelja`, `ime_ucitelja`, `priimek_ucitelja`, `email`, `geslo`) VALUES
@@ -188,127 +209,152 @@ INSERT INTO `ucitelji` (`id_ucitelja`, `ime_ucitelja`, `priimek_ucitelja`, `emai
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `ucitelj_predmet`
+-- Table structure for table `ucitelj_predmet`
 --
 
 CREATE TABLE `ucitelj_predmet` (
   `id_ucitelj_predmet` int(11) NOT NULL,
   `id_predmeta` int(11) NOT NULL,
   `id_ucitelja` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_general_ci;
 
 --
--- Odloži podatke za tabelo `ucitelj_predmet`
+-- Dumping data for table `ucitelj_predmet`
 --
 
 INSERT INTO `ucitelj_predmet` (`id_ucitelj_predmet`, `id_predmeta`, `id_ucitelja`) VALUES
 (1, 1, 1),
 (2, 2, 1),
-(3, 3, 1);
+(3, 3, 1),
+(4, 4, 1),
+(5, 4, 1),
+(6, 4, 1),
+(7, 5, 1),
+(8, 4, 1),
+(9, 4, 1),
+(10, 5, 1),
+(11, 6, 1),
+(12, 4, 1),
+(13, 4, 1),
+(14, 5, 1),
+(15, 6, 1),
+(16, 4, 1);
 
 --
--- Indeksi zavrženih tabel
+-- Indexes for dumped tables
 --
 
 --
--- Indeksi tabele `naloge`
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_admin`);
+
+--
+-- Indexes for table `naloge`
 --
 ALTER TABLE `naloge`
   ADD PRIMARY KEY (`id_naloge`);
 
 --
--- Indeksi tabele `ocenjene_naloge`
+-- Indexes for table `ocenjene_naloge`
 --
 ALTER TABLE `ocenjene_naloge`
   ADD PRIMARY KEY (`id_ocenjene_naloge`);
 
 --
--- Indeksi tabele `oddane_naloge`
+-- Indexes for table `oddane_naloge`
 --
 ALTER TABLE `oddane_naloge`
   ADD PRIMARY KEY (`id_oddane_naloge`);
 
 --
--- Indeksi tabele `predmeti`
+-- Indexes for table `predmeti`
 --
 ALTER TABLE `predmeti`
   ADD PRIMARY KEY (`id_predmeta`);
 
 --
--- Indeksi tabele `ucenci`
+-- Indexes for table `ucenci`
 --
 ALTER TABLE `ucenci`
   ADD PRIMARY KEY (`id_ucenca`);
 
 --
--- Indeksi tabele `ucenec_predmet`
+-- Indexes for table `ucenec_predmet`
 --
 ALTER TABLE `ucenec_predmet`
   ADD PRIMARY KEY (`id_ucenec_predmet`);
 
 --
--- Indeksi tabele `ucitelji`
+-- Indexes for table `ucitelji`
 --
 ALTER TABLE `ucitelji`
   ADD PRIMARY KEY (`id_ucitelja`);
 
 --
--- Indeksi tabele `ucitelj_predmet`
+-- Indexes for table `ucitelj_predmet`
 --
 ALTER TABLE `ucitelj_predmet`
   ADD PRIMARY KEY (`id_ucitelj_predmet`);
 
 --
--- AUTO_INCREMENT zavrženih tabel
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT tabele `naloge`
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `naloge`
 --
 ALTER TABLE `naloge`
-  MODIFY `id_naloge` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_naloge` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT tabele `ocenjene_naloge`
+-- AUTO_INCREMENT for table `ocenjene_naloge`
 --
 ALTER TABLE `ocenjene_naloge`
-  MODIFY `id_ocenjene_naloge` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_ocenjene_naloge` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT tabele `oddane_naloge`
+-- AUTO_INCREMENT for table `oddane_naloge`
 --
 ALTER TABLE `oddane_naloge`
-  MODIFY `id_oddane_naloge` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_oddane_naloge` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT tabele `predmeti`
+-- AUTO_INCREMENT for table `predmeti`
 --
 ALTER TABLE `predmeti`
-  MODIFY `id_predmeta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_predmeta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT tabele `ucenci`
+-- AUTO_INCREMENT for table `ucenci`
 --
 ALTER TABLE `ucenci`
-  MODIFY `id_ucenca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_ucenca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT tabele `ucenec_predmet`
+-- AUTO_INCREMENT for table `ucenec_predmet`
 --
 ALTER TABLE `ucenec_predmet`
-  MODIFY `id_ucenec_predmet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_ucenec_predmet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT tabele `ucitelji`
+-- AUTO_INCREMENT for table `ucitelji`
 --
 ALTER TABLE `ucitelji`
-  MODIFY `id_ucitelja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_ucitelja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT tabele `ucitelj_predmet`
+-- AUTO_INCREMENT for table `ucitelj_predmet`
 --
 ALTER TABLE `ucitelj_predmet`
-  MODIFY `id_ucitelj_predmet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_ucitelj_predmet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
