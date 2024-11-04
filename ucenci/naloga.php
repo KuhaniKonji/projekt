@@ -48,7 +48,7 @@ if (isset($_POST['upload'])) {
        <br>
        <form action="#" method="post" enctype="multipart/form-data">
          <input type="file" name="file"><br><br>
-         <input class="submit" type="submit" name="upload">
+         <input class="submit" type="submit" name="upload" value="Naloži">
        </form>
      </main>
      <footer>
