@@ -21,6 +21,6 @@
     <input style="margin-bottom: 20px;" type="text" name="navodilo"><br>
     <label>Rok oddaje:</label><br>
     <input style="margin-bottom: 20px;" type="date" name="rok_za_oddajo" required><br>
-    <input style="margin-top: 30px;" type="submit" name="razpis"><br>
+    <input style="margin-top: 30px;" type="submit" name="razpis" value="Razpiši nalogo"><br>
 
 </form>
