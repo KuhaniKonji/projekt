@@ -3,7 +3,6 @@
     <tr>
       <th>Ime učitelja</th>
       <th>Email</th>
-      <th>Telefon</th>
       <th>Št. predmetov</th>
     </tr>
   </thead>
@@ -19,7 +18,6 @@
     <tr>
       <td><a href="ucitelj.php?id_ucitelja=<?php echo $row_ucitelji_pri_predmetu['id_ucitelja']; ?>"><?php echo $row_ucitelji_pri_predmetu['ime_ucitelja'] . " " . $row_ucitelji_pri_predmetu['priimek_ucitelja'] ?></a></td>
       <td><?php echo $row_ucitelji_pri_predmetu['email']; ?></td>
-      <td><?php echo $row_ucitelji_pri_predmetu['telefon']; ?></td>
       <td><?php echo $row_ucitelji_pri_predmetu_count_predmeti_ucitelja['COUNT(id_predmeta)']; ?></td>
     </tr>
   <?php } ?>
