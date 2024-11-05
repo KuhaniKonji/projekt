@@ -89,13 +89,13 @@ echo "<option value='$id_predmeta'>" . $row_razpis['ime_predmeta'] . " " . $row_
  </select></td>
         <td><input type="text" name="ime_naloge" value="<?php echo $row_naloga['ime_naloge']; ?>"></td>
         <td><input type="text" name="navodilo" value="<?php echo $row_naloga['navodilo']; ?>"></td>
-        <td>Trenutni datum</td>
+        <td>Trenutni datum za oddajo</td>
         <td><input type="date" name="rok_za_oddajo" value="<?php echo $row_naloga['rok_za_oddajo']; ?>" required></td>
         <td><input type="submit" name="edit_naloge" value="Uredi"> </td>
         </form>
       </tr>
 
   <?php
-  // code...
+  
 } ?>
 </div>

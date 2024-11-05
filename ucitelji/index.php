@@ -12,7 +12,7 @@ if (isset($_POST['oceni'])) {
   $id_oddane_naloge=$_POST['id_oddane_naloge'];
   mysqli_query($con, "insert into ocenjene_naloge (ocena, id_oddane_naloge) values ('$ocena', '$id_oddane_naloge')");
   header("location:index.php");
-  // code...
+
 }
 if (isset($_POST['razpis'])) {
   $naslov=$_POST['naslov'];
@@ -22,10 +22,10 @@ if (isset($_POST['razpis'])) {
   $sql_x = "insert into naloge (ime_naloge, id_predmeta, navodilo, rok_za_oddajo) values ('$naslov', '$id_predmeta', '$navodilo', '$rok_za_oddajo')";
   mysqli_query($con, $sql_x);
   header("location:index.php");
-  // code...
+
 }
 
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -33,14 +33,14 @@ if (isset($_POST['razpis'])) {
     <meta charset="utf-8">
     <?php
     include("../php/fonts.php");
-     ?>
+?>
     <title>Domov</title>
     <style media="screen">
       <?php
       include("../css/master.css");
       include("../css/table.css");
       include("css/index.css");
-       ?>
+?>
     </style>
   </head>
   <body>

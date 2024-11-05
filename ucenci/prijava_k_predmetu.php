@@ -9,4 +9,4 @@ $id_predmeta=$_GET['id_predmeta'];
 $sql = "insert into ucenec_predmet (id_predmeta, id_ucenca) values('$id_predmeta', '$id_ucenca')";
 $result = mysqli_query($con, $sql);
 header("location:index.php");
- ?>
+?>

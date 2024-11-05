@@ -6,14 +6,14 @@ include("php/moji_predmeti.php");
 include("php/ostali_predmeti.php");
 
 
- ?>
- <!DOCTYPE html>
- <html lang="en" dir="ltr">
-   <head>
-     <meta charset="utf-8">
-     <?php
-     include("../php/fonts.php");
-      ?>
+?>
+<!DOCTYPE html> 
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<?php
+  include("../php/fonts.php");
+?>
      <title>Predmeti</title>
      <style media="screen">
        <?php
